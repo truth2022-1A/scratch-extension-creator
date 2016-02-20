@@ -1,4 +1,4 @@
-# scratch-extension-creator
+# Scratch Extension Creator!
 A Java project that allows users to add blocks to Scratch! (scratch.mit.edu)
 ##### This code is VERY messy, so I suggest opening it in Eclipse with Java 1.8.
 ####Bug reporting:
