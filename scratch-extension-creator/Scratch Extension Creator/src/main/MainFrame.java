@@ -218,18 +218,17 @@ public class MainFrame extends JFrame {
         mainPnl.add(hasDefInput);
         mainPnl.add(isChromeExtension);
         mainPnl.add(StartButton);
-		
-		JFrame frame = new JFrame();
-		frame.setSize(960,540);
-		frame.add(mainPnl);
-		StartButton.setBounds(60, 400, 220, 30);
-		frame.setTitle(Info.title()+" (v"+Info.versionNumber()+")");
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frame.setResizable(true);
-		//Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
-		//frame.setLocation(dim.width/2-frame.getSize().width/2, dim.height/2-frame.getSize().height/2);
-		frame.setLocationRelativeTo(null);
-		frame.setVisible(true);
+	JFrame frame = new JFrame();
+	frame.setSize(960,540);
+	frame.add(mainPnl);
+	StartButton.setBounds(60, 400, 220, 30);
+	frame.setTitle(Info.title()+" (v"+Info.versionNumber()+")");
+	frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	frame.setResizable(true);
+	//Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
+	//frame.setLocation(dim.width/2-frame.getSize().width/2, dim.height/2-frame.getSize().height/2);
+	frame.setLocationRelativeTo(null);
+	frame.setVisible(true);
 		
 	}
 
