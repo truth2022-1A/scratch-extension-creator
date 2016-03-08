@@ -11,12 +11,13 @@ public class BuildBlocks {
 	public static ArrayList<String> blocks = new ArrayList<String>();
 	public static ArrayList<String> output = new ArrayList<String>();
 	public static ArrayList<String> code = new ArrayList<String>();
+	public static ArrayList<Boolean> isReturn = new ArrayList<Boolean>();
 	public static ArrayList<ArrayList<String>> blockCode = new ArrayList<ArrayList<String>>();
 	
 	public static void compileBlocks(String url){
 		ArrayList<String> data = new ArrayList<String>();
 		ArrayList<String> beginVars = beginVars();
-		ArrayList<String> endVars = endVars(url); //TO-DO: IMPLEMENT URLS
+		ArrayList<String> endVars = endVars(url);
 		System.out.println("BuildBlocks :: Variables initiated");
 		data.add(beginVars.get(0));
 		data.add(beginVars.get(1));
@@ -48,7 +49,12 @@ public class BuildBlocks {
 			//}
 			//blockCode.get(0).get(count2);
 			System.out.println("BuildBlocks :: Block code injected.");
-			data.add("		callback();"); //TO-DO: Implement return statements for reporters.
+			//data.add("		callback();");
+			if(isReturn.get(count-1)==false){
+				data.add("		callback();");
+			} else {
+				data.add("		return 0;");
+			}
 			data.add("	};");
 		}
 		//data.add("	ext.idOne = function(callback){");
@@ -81,10 +87,20 @@ public class BuildBlocks {
 		} else {
 			blocks.add("	            [\"-\"],");
 		}
+		if(type=="r"){
+			isReturn.add(true);
+		} else {
+			isReturn.add(false);
+		}
 	}
 	public static void buildBlockWithDefInput(String type, String text, String defInput){
 		blockCount++;
 		blocks.add("	            ['"+type+"', '"+text+"', 'secId"+blockCount+"', '"+defInput+"'],");
+		if(type=="r"){
+			isReturn.add(true);
+		} else {
+			isReturn.add(false);
+		}
 	}
 	
 	public static void buildBlockCode(int op1, String arg0, String arg1){
