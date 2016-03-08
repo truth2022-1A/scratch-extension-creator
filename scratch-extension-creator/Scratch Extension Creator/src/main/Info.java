@@ -7,7 +7,7 @@ package main;
 
 public class Info {
 	public static double versionNumber(){
-		return 0.4;
+		return 0.5;
 	}
 	public static String title(){
 		return "Scratch Extension Creator";
