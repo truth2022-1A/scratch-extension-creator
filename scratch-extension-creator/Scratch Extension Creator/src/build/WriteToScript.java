@@ -15,8 +15,6 @@ public class WriteToScript {
 	public static void writeMainScript(ArrayList<String> script) throws FileNotFoundException, UnsupportedEncodingException, URISyntaxException{
 		int count = 0;
 		
-		//final File f = new File(MainFrame.class.getProtectionDomain().getCodeSource().getLocation().toURI().getPath());
-		//String path = f.toString().replaceAll("%20", " ");
 		System.out.println("WriteToScript :: Opening file path...");
 		File f = new File(System.getProperty("java.class.path"));
 		File dir = f.getAbsoluteFile().getParentFile();
